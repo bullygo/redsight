@@ -1,7 +1,3 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  base: '/redsight/',
-  plugins: [react()],
-})
+# This repository is a Vite app.
+# The build output is generated into `dist/` and deployed via GitHub Pages.
+# This file is not used as an app runtime config.
