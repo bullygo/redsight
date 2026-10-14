@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --rs-bg: #faf7f4;
+    --rs-surface: #ffffff;
+    --rs-surface-2: #f5f1ec;
+    --rs-border: #e8e2da;
+    --rs-text: #2d2a26;
+    --rs-muted: #8a8275;
+    --rs-primary: #e05545;
+    --rs-primary-dark: #c44538;
+    --rs-primary-light: #f06b5c;
+    --rs-accent: #f59e0b;
+    --rs-success: #16a34a;
+    --rs-warning: #f59e0b;
+    --rs-error: #dc2626;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--rs-bg);
+    color: var(--rs-text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--rs-primary);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .rs-gradient-text {
+    background: linear-gradient(135deg, #f06b5c, #e05545, #c44538);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rs-card {
+    background-color: var(--rs-surface);
+    border: 1px solid var(--rs-border);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(45, 42, 38, 0.04);
+  }
+
+  .rs-card:hover {
+    border-color: var(--rs-primary-light);
+    box-shadow: 0 0 0 1px rgba(224, 85, 69, 0.15), 0 8px 30px rgba(224, 85, 69, 0.08);
+  }
+
+  .rs-btn-primary {
+    background: linear-gradient(135deg, #e05545, #c44538);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .rs-btn-primary:hover {
+    background: linear-gradient(135deg, #f06b5c, #e05545);
+    box-shadow: 0 6px 24px rgba(224, 85, 69, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .rs-btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .rs-btn-ghost {
+    background-color: var(--rs-surface);
+    color: var(--rs-text);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--rs-border);
+    transition: all 0.25s ease;
+  }
+
+  .rs-btn-ghost:hover {
+    border-color: var(--rs-primary);
+    color: var(--rs-primary);
+  }
+
+  .rs-input {
+    background-color: var(--rs-surface);
+    border: 1px solid var(--rs-border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    color: var(--rs-text);
+    width: 100%;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+  }
+
+  .rs-input:focus {
+    outline: none;
+    border-color: var(--rs-primary);
+    box-shadow: 0 0 0 3px rgba(224, 85, 69, 0.1);
+  }
+
+  .rs-input::placeholder {
+    color: #b5afa5;
+  }
+
+  .rs-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--rs-muted);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .rs-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: var(--rs-surface-2);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--rs-border);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: var(--rs-primary-light);
+  }
+}
